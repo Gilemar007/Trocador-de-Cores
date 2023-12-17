@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alterar Background</title>
+  <style>
+    body {
+      transition: background-color 0.5s ease;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      color: white; /* Defina a cor do texto para que seja visível no fundo escuro */
+    }
+
+    .change-btn {
+      width: 120px;
+      height: 100px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<button class="change-btn" onclick="mudaBackground('lightblue')" style="background-color: blue;">LIGHTBLUE</button>
+<button class="change-btn" onclick="mudaBackground('lightgreen')" style="background-color: lightgreen;">LIGHTGREEN</button>
+<button class="change-btn" onclick="mudaBackground('pink')" style="background-color: pink;">PINK</button>
+<button class="change-btn" onclick="mudaBackground('black')" style="background-color: black;">black</button>
+<button class="change-btn" onclick="mudaBackground('white')" style="background-color: white;">WHITE</button>
+<button class="change-btn" onclick="mudaBackground('yellow')" style="background-color: yellow;">YELLOW</button>
+
+<!-- Adiciona um elemento h1 para exibir o nome da cor selecionada -->
+<h1 id="corSelecionada"></h1>
+
+<script>
+  function mudaBackground(color) {
+    // Altera a cor de fundo do body para a cor passada como argumento
+    document.body.style.backgroundColor = color;
+
+    // Atualiza o conteúdo do h1 com o nome da cor selecionada
+    document.getElementById('corSelecionada').innerText = color.charAt(0).toUpperCase() + color.slice(1);
+  }
+</script>
+
+</body>
+</html>
